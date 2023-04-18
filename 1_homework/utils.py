@@ -38,13 +38,13 @@ def quiz(words_for_file: list[str]) -> int:
     :return: points
     """
     points: int = 0
-    for line in words_for_file:
-        print(f'Угадайте слово: {"".join(sample(line, len(line)))}')
-        if line.lower() == str(input('')).lower():
+    for word in words_for_file:
+        print(f'Угадайте слово: {"".join(sample(word, len(word)))}')
+        if word.lower() == str(input('')).lower():
             print('Верно! Вы получаете 10 очков.\n')
             points += 10
         else:
-            print(f'Неверно! Верный ответ {line}.\n')
+            print(f'Неверно! Верный ответ {word}.\n')
     return points
 
 
