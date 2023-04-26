@@ -5,25 +5,25 @@ from typing import Any
 
 def read_file(path):
     """Функция для чтения json файла"""
-    with open(path, 'r') as fp:
+    with open(path, 'r', encoding='utf-8') as fp:
         return json.load(fp)
 
 
 def load_students() -> list[dict]:
-    """Функция вовзращает список с информацией о студентах"""
+    """Функция возвращает список с информацией о студентах"""
     path = os.path.abspath("data/students.json")
     return read_file(path)
 
 
 def load_professions() -> list[dict]:
-    """Функция вовзращает список с информацией о профессиях"""
+    """Функция возвращает список с информацией о профессиях"""
     path = os.path.abspath("data/professions.json")
     return read_file(path)
 
 
 def get_student_by_pk(pk: int) -> dict[str:Any]:
     """
-    Функция вовзращает словарь с информацией о студенте
+    Функция возвращает словарь с информацией о студенте
     :param pk:  передает номер студента
     :type: int
     :return: словарь с информацией о студенте
